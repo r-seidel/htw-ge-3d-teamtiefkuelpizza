@@ -1,15 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
 {
     public CharacterController controller;
-
-    public PlayerInput input;
-    private InputMaster master;
-
     public float speed = 8f;
     public float runSpeed = 15f;
     public float jumpSpeed = 2f;
@@ -20,11 +15,11 @@ public class PlayerMovementScript : MonoBehaviour
     private Vector3 normalScale;
     private float y = 0f;
 
-    private bool jump;
-    private bool crouch;
-    private bool run;
-    private float horizontal;
-    private float vertical;
+    private bool run = false;
+    private bool crouch = false;
+    private bool jump = false;
+    private float horizontal = 0f;
+    private float vertical = 0f;
 
     private void Start()
     {
@@ -65,47 +60,12 @@ public class PlayerMovementScript : MonoBehaviour
         controller.Move(move * Time.deltaTime);
     }
 
-    public void SetJumpTrigger(InputAction.CallbackContext context)
+    public void SetInputs(bool run, bool crouch, bool jump, float horizontal, float vertical)
     {
-        if (context.performed)
-        {
-            jump = true;
-        }
-        else if (context.canceled)
-        {
-            jump = false;
-        }
-    }
-
-    public void SetCrouchTrigger(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            crouch = true;
-        }
-        else if (context.canceled)
-        {
-            crouch = false;
-        }
-    }
-
-    public void SetRunTrigger(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            run = true;
-        }
-        else if (context.canceled)
-        {
-            run = false;
-        }
-    }
-
-    public void SetMoveValue(InputAction.CallbackContext context)
-    {
-        Vector2 temp = context.ReadValue<Vector2>();
-
-        horizontal = temp.x;
-        vertical = temp.y;
+        this.run = run;
+        this.crouch = crouch;
+        this.jump = jump;
+        this.horizontal = horizontal;
+        this.vertical = vertical;
     }
 }

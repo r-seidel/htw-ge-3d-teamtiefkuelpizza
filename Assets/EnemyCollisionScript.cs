@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class EnemyCollisionScript : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public SkinnedMeshRenderer meshRenderer;
+    public MeshCollider coll;
+
+    private void Start()
     {
-        if (other.gameObject.tag == "Arrow")
-        {
-            transform.parent.GetComponent<Animator>().SetTrigger("Death");
-        }
+        UpdateCollider();
+    }
+
+    public void UpdateCollider()
+    {
+        Mesh colliderMesh = new Mesh();
+        meshRenderer.BakeMesh(colliderMesh);
+        coll.sharedMesh = null;
+        coll.sharedMesh = colliderMesh;
     }
 }
