@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponScript : MonoBehaviour
 {
@@ -8,10 +9,9 @@ public class WeaponScript : MonoBehaviour
     public GameObject cam;
     public float velocity;
 
-    // Update is called once per frame
-    void Update()
+    public void Fire(InputAction.CallbackContext context)
     {
-        if (Input.GetButtonDown("Fire"))
+        if (context.performed)
         {
             GameObject go = Instantiate(arrow);
             go.transform.position = cam.transform.position;
