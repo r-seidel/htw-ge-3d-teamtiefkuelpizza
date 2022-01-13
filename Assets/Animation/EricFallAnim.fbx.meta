@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 0ba7a99a2c38cb9429bae2510f0cde6b
+guid: a732723d68dc9174fb7a7b3b2d7a7edd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Injured Walking
+    second: Falling
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Injured Walking
+      name: Falling
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 37
+      lastFrame: 135
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,111 +57,7 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves:
-      - name: IKRightFootWeight
-        curve:
-          serializedVersion: 2
-          curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0.007968212
-            outSlope: 0.007968212
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.06944548
-          - serializedVersion: 3
-            time: 0.15
-            value: 1
-            inSlope: -0.005836304
-            outSlope: -0.005836304
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.5
-            value: 1
-            inSlope: -0.0008470486
-            outSlope: -0.0008470486
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.5505751
-            outWeight: 1
-          - serializedVersion: 3
-            time: 0.52447027
-            value: 0
-            inSlope: 0.026118495
-            outSlope: 0.026118495
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.19035868
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          preInfinity: 3
-          postInfinity: 3
-          rotationOrder: 4
-      - name: IKLeftFootWeight
-        curve:
-          serializedVersion: 2
-          curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.4
-            value: 1
-            inSlope: 0.00009644209
-            outSlope: 0.00009644209
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.32446867
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.601709
-            value: 0
-            inSlope: 0.026812159
-            outSlope: 0.026812159
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.42400208
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.9742238
-            value: -0.0010011047
-            inSlope: -0.018001318
-            outSlope: -0.018001318
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.48353416
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 38.834305
-            outSlope: 38.834305
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0
-          preInfinity: 2
-          postInfinity: 2
-          rotationOrder: 4
+      curves: []
       events: []
       transformMask: []
       maskType: 3
