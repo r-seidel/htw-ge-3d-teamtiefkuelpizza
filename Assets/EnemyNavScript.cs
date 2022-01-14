@@ -12,6 +12,11 @@ public class EnemyNavScript : MonoBehaviour
     private bool navigating = true;
     private float timer;
 
+    private void Start()
+    {
+        agent.SetDestination(GetCliffPosition());
+    }
+
     // Update is called once per frame
     void Update()
     {
