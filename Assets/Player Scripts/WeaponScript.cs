@@ -7,17 +7,30 @@ public class WeaponScript : MonoBehaviour
 {
     public GameObject arrow;
     public GameObject cam;
+    public GameObject fireBall;
     public float velocity;
+    public float timer = 0;
+
+    public void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 2) {
+            fireBall.SetActive(true);
+        }
+    }
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && timer > 2)
         {
             GameObject go = Instantiate(arrow);
-            go.transform.position = cam.transform.position;
+            go.transform.position = fireBall.transform.position;
             go.transform.up = cam.transform.forward;
 
             go.GetComponent<Rigidbody>().AddForce(go.transform.up * velocity);
+
+            timer = 0;
+            fireBall.SetActive(false);
         }
     }
 }
