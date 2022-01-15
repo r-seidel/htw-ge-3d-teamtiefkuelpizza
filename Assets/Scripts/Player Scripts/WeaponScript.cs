@@ -9,7 +9,7 @@ public class WeaponScript : MonoBehaviour
     public GameObject cam;
     public GameObject fireBall;
     public float velocity;
-    public float timer = 0;
+    private float timer = 0;
 
     public void Update()
     {
