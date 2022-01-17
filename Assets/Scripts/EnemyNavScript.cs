@@ -55,12 +55,32 @@ public class EnemyNavScript : MonoBehaviour
 
     private Vector3 GetCliffPosition()
     {
-        Transform cliffTransform = GameObject.Find("SuicideCliff").transform;
+        Transform cliffTransform = FindClosestCliff().transform;
         float clampScale = cliffTransform.localScale.z / 2;
         float customZ = Mathf.Clamp(transform.position.z,
             cliffTransform.position.z - clampScale,
             cliffTransform.position.z + clampScale);
 
         return new Vector3(cliffTransform.position.x, cliffTransform.position.y, customZ);
+    }
+
+    public GameObject FindClosestCliff()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("SuicideCliff");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }

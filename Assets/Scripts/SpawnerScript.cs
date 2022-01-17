@@ -28,7 +28,7 @@ public class SpawnerScript : MonoBehaviour
                 Ray ray = new Ray(pos, Vector3.down);
                 if (Physics.Raycast(ray, out hit, 100f))
                 {
-                    GameObject go = Instantiate(enemy, hit.point, new Quaternion(0, 0, 0, 0));
+                    GameObject go = Instantiate(enemy, hit.point, new Quaternion(0, 0, 0, 0), GameObject.Find("EnemyContainer").transform);
                 }
             }
         }
