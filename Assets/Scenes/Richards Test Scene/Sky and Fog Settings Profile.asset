@@ -168,8 +168,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   localClouds:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   earthCurvature:
     m_OverrideState: 0
     m_Value: 0
@@ -180,11 +180,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0}
   lowestCloudAltitude:
-    m_OverrideState: 0
-    m_Value: 1000
+    m_OverrideState: 1
+    m_Value: 197
   cloudThickness:
-    m_OverrideState: 0
-    m_Value: 8000
+    m_OverrideState: 1
+    m_Value: 4668.49
   fadeInMode:
     m_OverrideState: 0
     m_Value: 0
