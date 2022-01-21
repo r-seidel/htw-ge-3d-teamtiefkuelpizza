@@ -7,6 +7,7 @@ TagManager:
   - Arrow
   - EricHead
   - SuicideCliff
+  - EnemyMain
   layers:
   - Default
   - TransparentFX
