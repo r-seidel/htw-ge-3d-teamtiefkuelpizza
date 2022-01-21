@@ -11,7 +11,8 @@
                     "id": "fb3a3344-02ac-4e21-99ac-22f91ba30703",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Run",
@@ -19,7 +20,8 @@
                     "id": "02bc1c28-00c3-402c-9a10-6619b233eb2e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Jump",
@@ -27,7 +29,8 @@
                     "id": "d412be60-5297-4e95-bff7-b5386eb465cc",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Crouch",
@@ -35,7 +38,8 @@
                     "id": "118fd1b7-2b88-4054-8ab0-46c144d1dce9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Fire",
@@ -43,7 +47,8 @@
                     "id": "0b27a99f-8e0f-48f8-ac89-6dfe5bc567a9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "MouseX",
@@ -51,7 +56,8 @@
                     "id": "8b48c920-b049-4e3f-b2d8-3555f677b7c8",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MouseY",
@@ -59,7 +65,17 @@
                     "id": "5c2c03a3-2934-4789-97af-8c6274984222",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FU",
+                    "type": "Button",
+                    "id": "f03178dd-5079-4da9-b544-181598a15e0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -181,6 +197,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58a05fe0-482e-4c72-b4e5-b0e0ff14241b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FU",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
