@@ -15,6 +15,7 @@ public class FallTriggerScript : MonoBehaviour
             go.GetComponent<EnemyNavScript>().enabled = false;
             go.GetComponent<NavMeshAgent>().enabled = false;
             go.GetComponent<IKFootPlacement>().enabled = false;
+            go.GetComponentInChildren<EnemyHitScript>().dying = true;
             if (!go.GetComponent<Rigidbody>())
             {
                 go.AddComponent<Rigidbody>();
