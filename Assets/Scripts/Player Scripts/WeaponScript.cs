@@ -11,6 +11,11 @@ public class WeaponScript : MonoBehaviour
     public float velocity;
     private float timer = 0;
 
+    public void resetTimer()
+    {
+        timer = 0;
+    }
+
     public void Update()
     {
         timer += Time.deltaTime;
