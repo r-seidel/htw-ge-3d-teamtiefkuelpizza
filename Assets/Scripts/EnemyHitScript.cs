@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHitScript : MonoBehaviour
 {
     public bool dying;
+    public bool claimed;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpTime: 3
-  searchCoolDown: 3
+  minSearchCoolDown: 2
+  maxSearchCoolDown: 4
   killTime: 3
   maxRange: 100
   layerMask:

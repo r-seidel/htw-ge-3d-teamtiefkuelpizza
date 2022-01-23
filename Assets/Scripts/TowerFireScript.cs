@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class TowerFireScript : MonoBehaviour
 {
-    public float powerUpTime;   // TODO: Replace with animation event
-    public float searchCoolDown;// sets the interval in which tower is looking for new target
-    public float killTime;      // time the laser will shoot a target until it dies
-    public float maxRange;      // laser wont shoot if the target is outside of range
-    public LayerMask layerMask; // set layers laser can shoot through
+    public float powerUpTime;       // time between finding new target and shooting it
+    public float minSearchCoolDown; // random time between min and max sets interval to look for new target
+    public float maxSearchCoolDown;
+    public float killTime;          // time the laser will shoot a target until it dies
+    public float maxRange;          // laser wont shoot if the target is outside of range
+    public LayerMask layerMask;     // set layers laser can shoot through
 
     private LineRenderer laser;
     private Animator orbAnim;
     private GameObject target;
     private float timer = 0f;
+    private float searchCoolDown;
     private AttackState attackState = AttackState.Idle;
 
     private enum AttackState{
@@ -24,6 +26,7 @@ public class TowerFireScript : MonoBehaviour
 
     private void Start()
     {
+        SetNewRandomSearchCoolDown();
         laser = transform.GetChild(0).GetComponent<LineRenderer>();
         orbAnim = transform.GetChild(1).GetComponent<Animator>();
     }
@@ -52,7 +55,9 @@ public class TowerFireScript : MonoBehaviour
                     if (!TargetStillValid())
                     {
                         timer = searchCoolDown;
+                        orbAnim.SetTrigger("PowerDown");
                         attackState = AttackState.Idle;
+                        break;
                     }
 
                     timer += Time.deltaTime;
@@ -72,6 +77,7 @@ public class TowerFireScript : MonoBehaviour
                         timer = searchCoolDown;
                         laser.gameObject.SetActive(false);
                         attackState = AttackState.Idle;
+                        break;
                     }
 
                     laser.SetPosition(1, target.transform.position - transform.position);
@@ -84,6 +90,7 @@ public class TowerFireScript : MonoBehaviour
 
                         target.GetComponent<EnemyHitScript>().InitiateDeath();
                         laser.gameObject.SetActive(false);
+                        SetNewRandomSearchCoolDown();
                         attackState = AttackState.Idle;
                     }
                     break;
@@ -101,7 +108,7 @@ public class TowerFireScript : MonoBehaviour
         List<GameObject> possibleTargets = new List<GameObject>();
         foreach(GameObject enemy in enemies)
         {
-            if (IsSeeing(enemy))
+            if (IsSeeing(enemy) && !enemy.GetComponent<EnemyHitScript>().claimed)
             {
                 possibleTargets.Add(enemy);
             }
@@ -114,6 +121,7 @@ public class TowerFireScript : MonoBehaviour
         else
         {
             target = GetFarthest(possibleTargets.ToArray());
+            target.GetComponent<EnemyHitScript>().claimed = true;
             return true;
         }
     }
@@ -166,5 +174,10 @@ public class TowerFireScript : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void SetNewRandomSearchCoolDown()
+    {
+        searchCoolDown = Random.Range(minSearchCoolDown, maxSearchCoolDown);
     }
 }
