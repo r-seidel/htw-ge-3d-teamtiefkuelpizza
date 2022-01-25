@@ -3,9 +3,12 @@ using System.Collections;
 
 public class csDestroyEffect : MonoBehaviour {
 
+    private float timer;
+
 	void Update ()
     {
-	    if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.C))
+        timer += Time.deltaTime;
+	    if(timer >= 1f)
         {
             Destroy(gameObject);
         }
