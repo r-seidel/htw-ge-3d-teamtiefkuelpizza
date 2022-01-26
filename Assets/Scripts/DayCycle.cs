@@ -34,6 +34,7 @@ public class DayCycle : MonoBehaviour
         if (timeDay > 24) // game over
         {
             timeDay = 0;
+            GameOver.gg = true;
         }
 
         SunPos();        
