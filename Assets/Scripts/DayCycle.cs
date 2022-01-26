@@ -5,13 +5,14 @@ using UnityEngine;
 public class DayCycle : MonoBehaviour
 {
     [Range(0,24)]
-public float timeDay;
-public float speed = 1.0f;
-public Light sun;
-public Light moon;
+    public float timeDay;
+    public static float speed = 5f;
+    public Light sun;
+    public Light moon;
 
-public bool isDay;
-public bool isNight;
+    public bool isDay;
+    public bool isNight;
+    private bool intro = true;
 
 
     // Start is called before the first frame update
@@ -22,10 +23,16 @@ public bool isNight;
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        if (timeDay > 9 && intro) // intro sequence
+        {
+            intro = false;
+            speed = 0f;
+        }
         timeDay += Time.deltaTime * speed;
-        if (timeDay > 24)
-        timeDay = 0;
+        if (timeDay < 8 && !intro) timeDay = 8; // cant go further back than 9 o clock
+        if (timeDay > 24) timeDay = 0; // game over
+        print(speed);
 
         SunPos();        
     }

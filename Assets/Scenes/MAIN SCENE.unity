@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2292.9429, g: 878.333, b: 675.18164, a: 1}
+  m_IndirectSpecularColor: {r: 2292.2007, g: 878.4658, b: 674.6133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -487,6 +487,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b510612fa2119646b7b98d7ff295659, type: 3}
+--- !u!1 &565279826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3671394866813012188, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+  m_PrefabInstance: {fileID: 1845825026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565279835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565279826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23312007d2da453469646d89f22e6728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 1025352032}
 --- !u!1 &711793742
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +653,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f581340a0cd12f48a975a86e02d23cd, type: 3}
+--- !u!1001 &816531843
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2534183120487367514, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534183120487367518, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+--- !u!1 &1025352032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2534183120453138393, guid: 92bbc1d15ed53fd439d5867fc45060e8, type: 3}
+  m_PrefabInstance: {fileID: 816531843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1062639325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1729,7 +1849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDay: 1.5
-  speed: 1
+  speed: 0
   sun: {fileID: 1884934264}
   moon: {fileID: 1062639330}
   isDay: 0

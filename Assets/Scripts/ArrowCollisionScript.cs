@@ -15,7 +15,6 @@ public class ArrowCollisionScript : MonoBehaviour
             GameObject go = Instantiate(effect);
             go.transform.position = transform.position;
             go.GetComponentInChildren<ParticleSystem>().Play();
-
             Destroy(gameObject);
         }
     }

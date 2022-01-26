@@ -12,6 +12,8 @@ public class EnemyHitScript : MonoBehaviour
         if (other.gameObject.tag == "Arrow")
         {
             InitiateDeath();
+            Score.score++;
+            DayCycle.speed -= 0.05f;
         }
     }
 
