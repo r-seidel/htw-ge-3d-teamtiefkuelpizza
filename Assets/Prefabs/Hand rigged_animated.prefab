@@ -948,7 +948,8 @@ MonoBehaviour:
   arrow: {fileID: 8055898212024670073, guid: 8af5c476dc5d8634bb4e60bc40de1976, type: 3}
   cam: {fileID: 0}
   fireBall: {fileID: 2355442091789676427}
-  velocity: 2000
+  velocity: 5000
+  shootInterval: 1
 --- !u!1 &8693429112589801176
 GameObject:
   m_ObjectHideFlags: 0

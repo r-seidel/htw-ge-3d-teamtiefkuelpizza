@@ -10,6 +10,7 @@ public class WeaponScript : MonoBehaviour
     public GameObject fireBall;
     public float velocity;
     private float timer = 0;
+    public float shootInterval;
 
     public void resetTimer()
     {
@@ -19,14 +20,14 @@ public class WeaponScript : MonoBehaviour
     public void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 2) {
+        if (timer > shootInterval) {
             fireBall.SetActive(true);
         }
     }
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (context.performed && timer > 2)
+        if (context.performed && timer > shootInterval)
         {
             GameObject go = Instantiate(arrow);
             go.transform.position = fireBall.transform.position;

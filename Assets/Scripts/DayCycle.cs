@@ -32,7 +32,6 @@ public class DayCycle : MonoBehaviour
         timeDay += Time.deltaTime * speed;
         if (timeDay < 8 && !intro) timeDay = 8; // cant go further back than 9 o clock
         if (timeDay > 24) timeDay = 0; // game over
-        print(speed);
 
         SunPos();        
     }
