@@ -12,7 +12,7 @@ public class DeathTriggerScript : MonoBehaviour
             Destroy(enemyRoot);
             GameObject.Find("RoundManager").GetComponent<RoundScript>().DecreaseLifes();
 
-            if (DayCycle.speed < 0.5) { DayCycle.speed += 0.05f; }
+            //if (DayCycle.speed < 0.5) { DayCycle.speed += 0.05f; }
         }
     }
 

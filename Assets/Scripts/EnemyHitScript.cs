@@ -20,7 +20,7 @@ public class EnemyHitScript : MonoBehaviour
         dying = true;
         transform.parent.GetComponent<Animator>().SetTrigger("Death");
 
-        DayCycle.speed -= 0.05f;
+        //DayCycle.speed -= 0.05f;
         GameObject.Find("Score").GetComponent<ScoreScript>().IncreaseScore();
     }
 }

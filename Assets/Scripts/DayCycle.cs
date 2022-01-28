@@ -6,13 +6,13 @@ public class DayCycle : MonoBehaviour
 {
     [Range(0,24)]
     public float timeDay;
+    private float newTime = 0;
     public static float speed = 5f;
     public Light sun;
     public Light moon;
 
     public bool isDay;
     public bool isNight;
-    private bool intro = true;
 
 
     // Start is called before the first frame update
@@ -24,20 +24,26 @@ public class DayCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeDay > 9 && intro) // intro sequence
+        
+        if (timeDay < 9) // intro sequence
         {
-            intro = false;
-            speed = 0f;
+            timeDay += Time.deltaTime * speed;
         }
-        timeDay += Time.deltaTime * speed;
-        if (timeDay < 8 && !intro) timeDay = 8; // cant go further back than 9 o clock
+        
+        if(timeDay< newTime)
+        {
+            speed = (newTime-timeDay)*0.15f;
+            timeDay += Time.deltaTime * speed;
+        }
+        
+
         if (timeDay > 24) // game over
         {
             timeDay = 0;
-            GameOver.gg = true;
         }
 
-        SunPos();        
+        SunPos();
+       // print(timeDay);
     }
     private void OnValidade()
     {
@@ -51,7 +57,7 @@ public class DayCycle : MonoBehaviour
         float moonRotation = Mathf.Lerp(-90, 90, hour);
         sun.transform.rotation = Quaternion.Euler(sunRotation, -150.0f, 0);
         moon.transform.rotation = Quaternion.Euler(moonRotation, -150.0f, 0);
-NightDayTransition();
+        NightDayTransition();
 
     }
      private void NightDayTransition() 
@@ -83,6 +89,9 @@ NightDayTransition();
              moon.shadows = LightShadows.Soft;
          }
 
-        
+    public void setDayTime(float newTime)
+    {
+        this.newTime = newTime;
+    }
 
 }

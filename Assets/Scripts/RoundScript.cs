@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoundScript : MonoBehaviour
 {
     public GameObject handMeshGo;
+    public GameObject dayTimeController;
     public int maxLifes;
 
     private int lifes;
@@ -21,6 +22,12 @@ public class RoundScript : MonoBehaviour
         Debug.Log($"Now at {lifes} life/s ({(float)lifes / maxLifes * 100}%)");
     }
 
+    private void UpdateDayTime()
+    {
+        dayTimeController.GetComponent<DayCycle>().setDayTime(24 - (float)lifes / maxLifes * 16);
+        print(24 - (float)lifes / maxLifes * 16);
+    }
+
     public void IncreaseLifes(int plus = 1)
     {
         //Debug.Log($"Gained {plus} life/s");
@@ -34,6 +41,7 @@ public class RoundScript : MonoBehaviour
 
         lifes -= minus;
         UpdateHand();
+        UpdateDayTime();
 
         if (lifes <= 0)
         {
