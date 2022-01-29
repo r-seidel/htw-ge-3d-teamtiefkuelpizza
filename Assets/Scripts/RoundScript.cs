@@ -25,18 +25,29 @@ public class RoundScript : MonoBehaviour
     private void UpdateDayTime()
     {
         dayTimeController.GetComponent<DayCycle>().setDayTime(24 - (float)lifes / maxLifes * 16);
-        print(24 - (float)lifes / maxLifes * 16);
+        //print(24 - (float)lifes / maxLifes * 16);
     }
 
     public void IncreaseLifes(int plus = 1)
     {
+        if (lifes >= maxLifes)
+        {
+            return;
+        }
+
         //Debug.Log($"Gained {plus} life/s");
         lifes += plus;
         UpdateHand();
+        UpdateDayTime();
     }
 
     public void DecreaseLifes(int minus = 1)
     {
+        if (lifes <= 0)
+        {
+            return;
+        }
+
         //Debug.Log($"Lost {minus} life/s");
 
         lifes -= minus;
@@ -55,6 +66,7 @@ public class RoundScript : MonoBehaviour
         {
             gameOver = true;
             GameObject.Find("Score").GetComponent<ScoreScript>().CollectResults();
+            GetComponent<WaveScript>().enabled = false;
 
             Debug.Log("GAME OVER");
             //GameObject hand = GameObject.Find("Hand rigged_animated");

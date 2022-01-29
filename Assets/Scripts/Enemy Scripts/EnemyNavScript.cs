@@ -31,6 +31,8 @@ public class EnemyNavScript : MonoBehaviour
         }
     }
 
+    // function by jimmikaelkael
+    // https://forum.unity.com/threads/animation-driven-character-using-navigation.378180/
     void OnAnimatorMove()
     {
         if (navigating)
@@ -56,12 +58,15 @@ public class EnemyNavScript : MonoBehaviour
     private Vector3 GetCliffPosition()
     {
         Transform cliffTransform = FindClosestCliff().transform;
+        /*
         float clampScale = cliffTransform.localScale.z / 2;
         float customZ = Mathf.Clamp(transform.position.z,
             cliffTransform.position.z - clampScale,
             cliffTransform.position.z + clampScale);
 
         return new Vector3(cliffTransform.position.x, cliffTransform.position.y, customZ);
+        */
+        return cliffTransform.position;
     }
 
     public GameObject FindClosestCliff()

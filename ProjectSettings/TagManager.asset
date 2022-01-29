@@ -8,6 +8,7 @@ TagManager:
   - EricHead
   - SuicideCliff
   - EnemyMain
+  - Spawner
   layers:
   - Default
   - TransparentFX
