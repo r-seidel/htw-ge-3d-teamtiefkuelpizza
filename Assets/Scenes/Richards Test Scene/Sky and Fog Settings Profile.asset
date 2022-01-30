@@ -121,13 +121,13 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
   spaceEmissionTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 8900000, guid: 02af117f674002347966509ee6469369, type: 3}
   spaceEmissionMultiplier:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 41.43
   spaceRotation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0, y: 0, z: 0}
   colorSaturation:
     m_OverrideState: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
     m_Value: 1
   localClouds:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   earthCurvature:
     m_OverrideState: 0
     m_Value: 0
@@ -207,11 +207,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   cloudControl:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   cloudPreset:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 3
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
