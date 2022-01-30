@@ -42,6 +42,8 @@ public class WaveScript : MonoBehaviour
                     timer = 0f;
                     StartNextWave();
                     waveState = WaveState.Waving;
+                    
+                    
                 }
 
                 break;
@@ -83,9 +85,11 @@ public class WaveScript : MonoBehaviour
         //set spawner values
         foreach (GameObject spawner in selectedSpawners)
         {
+            
             spawner.GetComponent<SpawnerScript>().toSpawn = perSpawnerAmount;
             spawner.GetComponent<SpawnerScript>().interval = waveLength / perSpawnerAmount;
         }
+       
 
         Debug.Log($"Starting Wave {waveNum}: {enemyAmount} Enemies on {selectedSpawners.Length} spawners");
     }
