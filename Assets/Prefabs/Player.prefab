@@ -491,6 +491,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f03178dd-5079-4da9-b544-181598a15e0d
     m_ActionName: Player/FU[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3671394866813012164}
+        m_TargetAssemblyTypeName: PlayerInteractionScript, Assembly-CSharp
+        m_MethodName: InteractButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c61c7b04-37dd-492a-ba30-ce793dfc5ed3
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -560,7 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08322163ffd07e4a8ec2510c82b61ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraGO: {fileID: 3671394864936794535}
 --- !u!1001 &3365658019046430097
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class RoundScript : MonoBehaviour
     private void UpdateHand()
     {
         handMeshGo.GetComponent<LifeIndicatorScript>().SetHealthPercentage((float)lifes / maxLifes);
-        Debug.Log($"Now at {lifes} life/s ({(float)lifes / maxLifes * 100}%)");
+        //Debug.Log($"Now at {lifes} life/s ({(float)lifes / maxLifes * 100}%)");
     }
 
     private void UpdateDayTime()

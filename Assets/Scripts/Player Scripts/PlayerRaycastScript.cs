@@ -10,7 +10,7 @@ public class PlayerRaycastScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //visual of raycast
+        //gizmo of raycast
         RaycastHit vis;
         if (Physics.Raycast(cameraObject.transform.position, cameraObject.transform.TransformDirection(Vector3.forward), out vis, maxDistance))
         {

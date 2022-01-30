@@ -247,11 +247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2a20571bb808b409aac7654e26b626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpTime: 3
-  minSearchCoolDown: 2
-  maxSearchCoolDown: 4
-  killTime: 3
-  maxRange: 100
+  powerUpTime: 0
+  minSearchCoolDown: 3
+  maxSearchCoolDown: 5
+  killTime: 4
+  maxRange: 1000
   layerMask:
     serializedVersion: 2
     m_Bits: 2147483647

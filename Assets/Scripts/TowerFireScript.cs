@@ -86,7 +86,7 @@ public class TowerFireScript : MonoBehaviour
                     timer += Time.deltaTime;
                     if(timer >= killTime)
                     {
-                        timer = searchCoolDown;
+                        timer = 0f;
 
                         target.GetComponent<EnemyHitScript>().InitiateDeath();
                         laser.gameObject.SetActive(false);
