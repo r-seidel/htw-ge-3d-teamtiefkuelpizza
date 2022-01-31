@@ -14,22 +14,29 @@ public class ArrowCollisionScript : MonoBehaviour
         if (!collision.gameObject.layer.Equals("Enemy"))
         {
             
-            GameObject go = Instantiate(effect);
-            go.transform.position = transform.position;
+            GameObject go = Instantiate(effect, transform.position, new Quaternion ( 0, 0, 0, 0 ));
             go.GetComponentInChildren<ParticleSystem>().Play();
-            
+
             StartCoroutine(destroy());
         }
     }
 
     IEnumerator destroy()
     {
-        foreach(Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
         GetComponent<Collider>().enabled = false;
-        yield return new WaitForSecondsRealtime(1);
+        Destroy(GetComponent<Rigidbody>());
+        foreach (Transform child in transform)
+        {
+            if (child.GetComponent<ParticleSystem>())
+            {
+                child.GetComponent<ParticleSystem>().Stop();
+            }
+            else
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        yield return new WaitForSecondsRealtime(5);
         Destroy(gameObject);
     }
 }

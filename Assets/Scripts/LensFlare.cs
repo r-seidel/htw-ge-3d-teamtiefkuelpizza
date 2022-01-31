@@ -16,7 +16,7 @@ public class LensFlare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<LensFlareComponentSRP>().scale = (DayNight.GetComponent<DayCycle>().timeDay-9)/6;
+        //GetComponent<LensFlareComponentSRP>().scale = (DayNight.GetComponent<DayCycle>().timeDay-9)/6;
         
     }
 }

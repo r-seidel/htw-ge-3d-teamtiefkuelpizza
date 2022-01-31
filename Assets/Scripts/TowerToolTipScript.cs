@@ -8,6 +8,9 @@ public class TowerToolTipScript : MonoBehaviour, WatchedInterface
     public GameObject tooltip;
 
     private bool watched = false;
+    private float resetTime = 0.05f;
+    private float timer = 0f;
+
 
     private void Update()
     {
@@ -28,19 +31,18 @@ public class TowerToolTipScript : MonoBehaviour, WatchedInterface
                 tmp.text = $"LEVEL {GetComponent<TowerControllerScript>().GetUpgradeLevel()} \n [E] Upgrade";
             }
         }
-        else
+
+        timer += Time.deltaTime;
+        if(timer >= resetTime)
         {
+            watched = false;
             tooltip.SetActive(false);
         }
-    }
-
-    private void LateUpdate()
-    {
-        watched = false;
     }
 
     public void SetWatchedTrue()
     {
         watched = true;
+        timer = 0f;
     }
 }
