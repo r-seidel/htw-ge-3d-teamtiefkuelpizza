@@ -11,7 +11,7 @@ public class HandAnimScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        fireBall = transform.Find("FireBall Variant").gameObject;
+        fireBall = transform.Find("FireBall Hand").gameObject;
     }
 
 

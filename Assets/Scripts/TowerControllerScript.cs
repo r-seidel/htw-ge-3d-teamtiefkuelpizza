@@ -6,6 +6,10 @@ using UnityEngine;
 public class TowerControllerScript : MonoBehaviour, InteractableInterface
 {
     public float[,] upgradeStats; //[Level before Upgrading][minSearchCoolDown, maxSearchCoolDown, killTime]
+    public float minSearchTimeMultiplier;
+    public float maxSearchTimeMultiplier;
+    public float killTimeMultiplier;
+    public int maxLevel;            //set to -1 if no max level
     public GameObject towerPrefab;
 
     private bool bought = false;
@@ -27,11 +31,14 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
     {
         if (bought)
         {
-            TryUpgradeTower();
+            //TryUpgradeTower();
+            InfiniteUpgrade();
         }
         else
         {
             PlaceTower();
+            //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play()
+            FindObjectOfType<AudioManager>().Play("TowerAvailable");
         }
     }
 
@@ -42,7 +49,8 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
 
     public bool GetIfMaxLevel()
     {
-        return upgradeLevel >= upgradeStats.GetLength(0);
+        //return upgradeLevel >= upgradeStats.GetLength(0);
+        return upgradeLevel == maxLevel;
     }
 
     public bool GetIfBought()
@@ -50,6 +58,7 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
         return bought;
     }
 
+    //old - for when tower leveling stats are manual and limited
     private bool TryUpgradeTower()
     {
         //if max level was reached
@@ -71,11 +80,32 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
         return true;
     }
 
+    private bool InfiniteUpgrade()
+    {
+        if(upgradeLevel == maxLevel)
+        {
+            Debug.Log("Reached MAX level");
+            return false;
+        }
+
+        //set values of upgradeStats to tower
+        tower.GetComponent<TowerFireScript>().minSearchCoolDown *= minSearchTimeMultiplier;
+        tower.GetComponent<TowerFireScript>().maxSearchCoolDown *= maxSearchTimeMultiplier;
+        tower.GetComponent<TowerFireScript>().killTime *= killTimeMultiplier;
+        Debug.Log($"Tower upgraded! Now on Level {upgradeLevel + 1} with stats: " +
+            $"Min Search Cool Down: {tower.GetComponent<TowerFireScript>().minSearchCoolDown} " +
+            $"Max Search Cool Down: {tower.GetComponent<TowerFireScript>().maxSearchCoolDown} " +
+            $"Kill Time: {tower.GetComponent<TowerFireScript>().killTime}");
+        upgradeLevel++;
+        return true;
+    }
+
     private void PlaceTower()
     {
         bought = true;
-        GameObject spawn = transform.GetChild(0).gameObject;
+        GameObject spawn = transform.parent.Find("TowerSpawnPoint").gameObject;
         tower = Instantiate(towerPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
+        tower.transform.parent = transform.parent;
         tower = tower.transform.GetChild(0).gameObject;
     }
 }

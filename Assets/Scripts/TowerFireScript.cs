@@ -55,6 +55,7 @@ public class TowerFireScript : MonoBehaviour
                     if (!TargetStillValid())
                     {
                         timer = searchCoolDown;
+                        target.GetComponent<EnemyHitScript>().claimed = false;
                         orbAnim.SetTrigger("PowerDown");
                         attackState = AttackState.Idle;
                         break;
@@ -75,6 +76,7 @@ public class TowerFireScript : MonoBehaviour
                     if (!TargetStillValid())
                     {
                         timer = searchCoolDown;
+                        target.GetComponent<EnemyHitScript>().claimed = false;
                         laser.gameObject.SetActive(false);
                         attackState = AttackState.Idle;
                         break;

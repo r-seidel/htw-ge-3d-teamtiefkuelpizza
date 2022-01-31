@@ -92,6 +92,9 @@ public class WaveScript : MonoBehaviour
        
 
         Debug.Log($"Starting Wave {waveNum}: {enemyAmount} Enemies on {selectedSpawners.Length} spawners");
+
+        FindObjectOfType<AudioManager>().Play("EnemyWave01");
+        FindObjectOfType<AudioManager>().Play("EnemyHorn01");
     }
 
     private GameObject[] GetRandomSpawners(int amount)

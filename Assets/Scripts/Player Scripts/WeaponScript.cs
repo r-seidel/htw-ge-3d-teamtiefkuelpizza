@@ -12,6 +12,13 @@ public class WeaponScript : MonoBehaviour
     private float timer = 0;
     public float shootInterval;
 
+    private GameObject pullSpark;
+
+    public void Start()
+    {
+        pullSpark = fireBall.transform.Find("PullSpark Hand").gameObject;
+    }
+
     public void resetTimer()
     {
         timer = 0;
@@ -21,6 +28,8 @@ public class WeaponScript : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer > shootInterval) {
+            pullSpark.transform.parent = fireBall.transform;
+            pullSpark.transform.position = fireBall.transform.position;
             fireBall.SetActive(true);
         }
     }
@@ -36,6 +45,7 @@ public class WeaponScript : MonoBehaviour
             go.GetComponent<Rigidbody>().AddForce(go.transform.up * velocity);
 
             timer = 0;
+            pullSpark.transform.parent = null;
             fireBall.SetActive(false);
         }
     }
