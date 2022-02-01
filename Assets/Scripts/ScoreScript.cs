@@ -10,7 +10,7 @@ public class ScoreScript : MonoBehaviour
     private TextMeshPro scoreText;
     private TextMeshPro highText;
     private int highscore;
-    private int score = 0;
+    public int score = 0;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class ScoreScript : MonoBehaviour
         highscore = newHigh;
     }
 
-    private void UpdateText()
+    public void UpdateText()
     {
         scoreText.text = $"SCORE\n{score}";
         highText.text = $"HIGH {highscore}";

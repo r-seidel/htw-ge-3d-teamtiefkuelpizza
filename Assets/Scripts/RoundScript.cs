@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RoundScript : MonoBehaviour
 {
     public GameObject handMeshGo;
     public GameObject dayTimeController;
+    public GameObject EnemyContainer;
     public int maxLifes;
+    public GameObject RestartToolTip;
+    public GameObject Score;
 
     private int lifes;
     private bool gameOver = false;
@@ -24,7 +28,8 @@ public class RoundScript : MonoBehaviour
 
     private void UpdateDayTime()
     {
-        dayTimeController.GetComponent<DayCycle>().setDayTime(24 - (float)lifes / maxLifes * 16);
+        
+        if(!gameOver) dayTimeController.GetComponent<DayCycle>().setDayTime(24 - (float)lifes / maxLifes * 16);
         //print(24 - (float)lifes / maxLifes * 16);
     }
 
@@ -65,12 +70,50 @@ public class RoundScript : MonoBehaviour
         if (!gameOver)
         {
             gameOver = true;
+            foreach (Transform child in EnemyContainer.transform)
+            {
+                child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
+                Score.GetComponent<ScoreScript>().DecreaseScore();
+
+            }
             GameObject.Find("Score").GetComponent<ScoreScript>().CollectResults();
             GetComponent<WaveScript>().enabled = false;
+
+            RestartToolTip.SetActive(true);
 
             Debug.Log("GAME OVER");
             //GameObject hand = GameObject.Find("Hand rigged_animated");
             //Destroy(hand);
+        }
+    }
+
+    public void ReStart(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            GetComponent<WaveScript>().resetValues();
+            foreach (Transform child in EnemyContainer.transform)
+            {
+                child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
+                Score.GetComponent<ScoreScript>().DecreaseScore();
+
+            }
+            
+            GetComponent<WaveScript>().enabled = false;
+            lifes = maxLifes;
+            gameOver = false;
+            GetComponent<WaveScript>().enabled = true;
+            Score.GetComponent<ScoreScript>().score = 0;
+            Score.GetComponent<ScoreScript>().UpdateText();
+            dayTimeController.GetComponent<DayCycle>().resetDayTime();
+
+
+            RestartToolTip.SetActive(false);
+            UpdateHand();
+            UpdateDayTime();
+
+            Debug.Log("New round");
         }
     }
 }

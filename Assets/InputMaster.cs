@@ -107,6 +107,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart Round"",
+                    ""type"": ""Button"",
+                    ""id"": ""10cc0028-488c-48f2-92bb-6faad3de6440"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +261,17 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33622838-4d6f-4a47-96d7-8308c9ad45ce"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart Round"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +289,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_Player_MouseY = m_Player.FindAction("MouseY", throwIfNotFound: true);
         m_Player_FU = m_Player.FindAction("FU", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_RestartRound = m_Player.FindAction("Restart Round", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -337,6 +358,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MouseY;
     private readonly InputAction m_Player_FU;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_RestartRound;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -350,6 +372,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         public InputAction @MouseY => m_Wrapper.m_Player_MouseY;
         public InputAction @FU => m_Wrapper.m_Player_FU;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @RestartRound => m_Wrapper.m_Player_RestartRound;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -386,6 +409,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @RestartRound.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartRound;
+                @RestartRound.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartRound;
+                @RestartRound.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartRound;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +443,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @RestartRound.started += instance.OnRestartRound;
+                @RestartRound.performed += instance.OnRestartRound;
+                @RestartRound.canceled += instance.OnRestartRound;
             }
         }
     }
@@ -432,5 +461,6 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         void OnMouseY(InputAction.CallbackContext context);
         void OnFU(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnRestartRound(InputAction.CallbackContext context);
     }
 }

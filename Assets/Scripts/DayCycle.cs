@@ -13,6 +13,7 @@ public class DayCycle : MonoBehaviour
 
     public bool isDay;
     public bool isNight;
+    private bool reset;
 
 
     // Start is called before the first frame update
@@ -24,9 +25,15 @@ public class DayCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (timeDay < 9) // intro sequence
+        if(reset && timeDay>9)
         {
+            speed = 10f;
+            timeDay -= Time.deltaTime * speed;
+        }
+        else if (timeDay < 9) // intro sequence
+        {
+            speed = 5f;
+            reset = false;
             timeDay += Time.deltaTime * speed;
         }
         
@@ -92,6 +99,13 @@ public class DayCycle : MonoBehaviour
     public void setDayTime(float newTime)
     {
         this.newTime = newTime;
+    }
+
+    public void resetDayTime()
+    {
+        reset = true;
+        this.newTime = 9;
+        speed = 10f;
     }
 
 }

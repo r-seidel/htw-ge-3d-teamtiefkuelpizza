@@ -19,6 +19,19 @@ public class WaveScript : MonoBehaviour
     private float timer = 0;
     private WaveState waveState = WaveState.Waiting;
 
+    public void resetValues()
+    {
+        addSiteAtPointer = 0;
+        siteAmount = 1;
+        waveNum = 0;
+        timer = 0;
+        waveState = WaveState.Waiting;
+        foreach(GameObject go in spawners)
+        {
+            go.GetComponent<SpawnerScript>().toSpawn = 0;
+        }
+    }
+
     private enum WaveState
     {
         Waving,
