@@ -6,15 +6,17 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class LensFlare : MonoBehaviour
 {
+    private GameObject DayCycle;
     // Start is called before the first frame update
     void Start()
     {
+        DayCycle = transform.parent.transform.Find("DayNightController").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<LensFlareComponentSRP>().scale = 1-Mathf.Abs(GetComponent<DayCycle>().timeDay - 12)/6;
+        GetComponent<LensFlareComponentSRP>().scale = 1-Mathf.Abs(DayCycle.GetComponent<DayCycle>().timeDay - 12)/6;
         
     }
 }
