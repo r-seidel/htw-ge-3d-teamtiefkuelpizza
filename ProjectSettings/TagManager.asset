@@ -9,6 +9,7 @@ TagManager:
   - SuicideCliff
   - EnemyMain
   - Spawner
+  - TowerController
   layers:
   - Default
   - TransparentFX

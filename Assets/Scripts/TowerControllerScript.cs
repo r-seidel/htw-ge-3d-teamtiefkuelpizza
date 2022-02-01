@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TowerControllerScript : MonoBehaviour, InteractableInterface
@@ -25,6 +26,17 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
             { 2, 3, 2 },
             { 1.5f, 2, 1 }
         };
+    }
+
+    public void resetController()
+    {
+        if (bought)
+        {
+            Destroy(tower.transform.parent.gameObject);
+            bought = false;
+            upgradeLevel = 0;
+        }
+
     }
 
     public void Interact()

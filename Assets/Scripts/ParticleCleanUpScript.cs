@@ -9,10 +9,13 @@ public class ParticleCleanUpScript : MonoBehaviour
     public ParticleSystem ps;
 
     private bool awaitingDestroy = false;
+    private float timer = 0;
+
 
     private void Update()
     {
-        if(awaitingDestroy && ps.particleCount == 0)
+        timer += Time.deltaTime;
+        if ((awaitingDestroy && ps.particleCount == 0) || timer >= 10f)
         {
             Destroy(this.gameObject);
         }

@@ -11,6 +11,7 @@ public class RoundScript : MonoBehaviour
     public int maxLifes;
     public GameObject RestartToolTip;
     public GameObject Score;
+    public GameObject Plattform;
 
     private int lifes;
     private bool gameOver = false;
@@ -95,9 +96,26 @@ public class RoundScript : MonoBehaviour
             GetComponent<WaveScript>().resetValues();
             foreach (Transform child in EnemyContainer.transform)
             {
-                child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
-                Score.GetComponent<ScoreScript>().DecreaseScore();
+                if (child.gameObject.GetComponentInChildren<EnemyHitScript>().dying)
+                {
+                    Destroy(child.Find("SparkEffect"));
+                    Destroy(child.gameObject); // prevent further action from enemys falling after restart
 
+                }
+                else
+                {  // die normally
+                    child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
+                    Score.GetComponent<ScoreScript>().DecreaseScore();
+                }
+
+            }
+
+            foreach(Transform child in Plattform.transform)
+            {
+                if(child.tag.Equals("TowerController"))
+                {
+                    child.Find("ControllerHitbox").GetComponent<TowerControllerScript>().resetController();
+                }
             }
             
             GetComponent<WaveScript>().enabled = false;
