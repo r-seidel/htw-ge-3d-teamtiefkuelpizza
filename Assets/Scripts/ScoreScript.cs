@@ -20,6 +20,11 @@ public class ScoreScript : MonoBehaviour
         UpdateText();
     }
 
+    private void Update()
+    {
+        print(score);
+    }
+
     private void SetHighscore(int newHigh)
     {
         PlayerPrefs.SetInt("Highscore", newHigh);

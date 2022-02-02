@@ -124,6 +124,7 @@ public class RoundScript : MonoBehaviour
             GetComponent<WaveScript>().enabled = true;
             Score.GetComponent<ScoreScript>().score = 0;
             Score.GetComponent<ScoreScript>().UpdateText();
+            Score.GetComponent<ScoreScript>().scoring = true;
             dayTimeController.GetComponent<DayCycle>().resetDayTime();
 
 
