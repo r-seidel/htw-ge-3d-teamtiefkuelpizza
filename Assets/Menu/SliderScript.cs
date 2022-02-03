@@ -18,12 +18,12 @@ public class SliderScript : MonoBehaviour
     {
         MasterSlider.onValueChanged.AddListener((mvalue) =>
         {
-            
+            AudioListener.volume = mvalue;
         });
 
         MusicSlider.onValueChanged.AddListener((svalue) =>
         {
-            MusicManager.GetComponent<AudioSource>().volume = svalue;
+            MusicManager.GetComponent<AudioSource>().volume = svalue * 0.1f;
         });
 
         FOVSlider.onValueChanged.AddListener((fvalue) =>
