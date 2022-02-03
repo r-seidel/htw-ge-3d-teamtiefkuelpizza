@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 208.3128, g: 90.73447, b: 198.62097, a: 1}
+  m_IndirectSpecularColor: {r: 228.78162, g: 100.24896, b: 229.3855, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,6 +169,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8088125002768482350, guid: 8aa342fd1f283ee4a82d0ae5caef03fa, type: 3}
   m_PrefabInstance: {fileID: 999272971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &136395286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4836929569237923618, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+  m_PrefabInstance: {fileID: 1845825026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &136395291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136395286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327f9ffe58049a643bce4dfa968d7adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obamium: {fileID: 4035792097038863667, guid: 7567c77df94e17346b8cf3eb16995da8, type: 3}
 --- !u!1001 &142015412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2929,7 +2947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreToolTip: {fileID: 1917714326}
   enemyBaseline: 10
-  exponent: 2
+  exponent: 1.6
   addSiteAt: 040000000700000009000000
   waveLength: 20
   pauseLenght: 5
@@ -3742,7 +3760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1636289268107932080, guid: 965fcdd17cda5f54ca37ec932e98f8e8, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1636289268107932080, guid: 965fcdd17cda5f54ca37ec932e98f8e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7423,7 +7441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695288488
 GameObject:
@@ -9027,7 +9045,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 125.1, y: -18.532, z: -7.624}
 --- !u!114 &1884934262
 MonoBehaviour:
@@ -9954,7 +9972,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 35f9046820daa4a459d4019a76e99420, type: 2}
     - target: {fileID: -8679921383154817045, guid: 8b76ec6143961ff40b1baf680572d88c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b76ec6143961ff40b1baf680572d88c, type: 3}
       propertyPath: m_LocalScale.x

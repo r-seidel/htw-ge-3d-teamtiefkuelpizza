@@ -10,7 +10,7 @@ public class LensFlare : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DayCycle = transform.parent.transform.Find("DayNightController").gameObject;
+        DayCycle = GameObject.Find("DayNightController");
     }
 
     // Update is called once per frame
