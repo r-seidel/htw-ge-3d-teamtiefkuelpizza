@@ -14,7 +14,7 @@ public class TowerToolTipScript : MonoBehaviour, WatchedInterface
 
     private void Update()
     {
-        if (watched)
+        if (watched && GameObject.Find("RoundManager").GetComponent<WaveScript>().GetIfPaused())
         {
             tooltip.SetActive(true);
             TextMeshPro tmp = tooltip.GetComponent<TextMeshPro>();

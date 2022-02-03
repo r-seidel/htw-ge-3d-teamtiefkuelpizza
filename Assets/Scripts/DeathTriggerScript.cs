@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeathTriggerScript : MonoBehaviour
 {
+    public GameObject deathBeacon;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "EricHead")
@@ -11,7 +13,8 @@ public class DeathTriggerScript : MonoBehaviour
             GameObject enemyRoot = GetInContainerRoot(other.gameObject);
             Destroy(enemyRoot);
             GameObject.Find("RoundManager").GetComponent<RoundScript>().DecreaseLifes();
-
+            PlayRandomChime();
+            Instantiate(deathBeacon, other.transform.position, new Quaternion(0, 0, 0, 0));
             //if (DayCycle.speed < 0.5) { DayCycle.speed += 0.05f; }
         }
     }
@@ -24,5 +27,11 @@ public class DeathTriggerScript : MonoBehaviour
         }
 
         return GetInContainerRoot(go.transform.parent.gameObject);
+    }
+
+    private void PlayRandomChime()
+    {
+        string chime = "Chime" + Random.Range(1, 5);
+        FindObjectOfType<AudioManager>().Play(chime);
     }
 }

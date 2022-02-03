@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class WaveScript : MonoBehaviour
 {
+    public GameObject scoreToolTip;
     public int enemyBaseline;
     public float exponent;
     public int[] addSiteAt;
@@ -17,7 +19,13 @@ public class WaveScript : MonoBehaviour
     private int siteAmount = 1;
     private int waveNum = 0;
     private float timer = 0;
-    private WaveState waveState = WaveState.Waiting;
+    private WaveState waveState = WaveState.Starting;
+    private enum WaveState
+    {
+        Starting,
+        Waving,
+        Waiting
+    }
 
     public void resetValues()
     {
@@ -25,17 +33,16 @@ public class WaveScript : MonoBehaviour
         siteAmount = 1;
         waveNum = 0;
         timer = 0;
-        waveState = WaveState.Waiting;
+        waveState = WaveState.Starting;
         foreach(GameObject go in spawners)
         {
             go.GetComponent<SpawnerScript>().toSpawn = 0;
         }
     }
 
-    private enum WaveState
+    public bool GetIfPaused()
     {
-        Waving,
-        Waiting
+        return waveState == WaveState.Waiting;
     }
 
     private void Start()
@@ -47,18 +54,27 @@ public class WaveScript : MonoBehaviour
     {
         switch (waveState)
         {
-            case WaveState.Waiting:
-
+            case WaveState.Starting:
                 timer += Time.deltaTime;
                 if(timer >= pauseLenght)
                 {
                     timer = 0f;
                     StartNextWave();
                     waveState = WaveState.Waving;
-                    
-                    
                 }
-
+                break;
+            case WaveState.Waiting:
+                /*
+                timer += Time.deltaTime;
+                if(timer >= pauseLenght)
+                {
+                    timer = 0f;
+                    StartNextWave();
+                    waveState = WaveState.Waving;
+                }
+                */
+                scoreToolTip.GetComponent<TextMeshPro>().text = "UPGRADE TOWER TO CONTINUE";
+                scoreToolTip.SetActive(true);
                 break;
             case WaveState.Waving:
 
@@ -69,6 +85,8 @@ public class WaveScript : MonoBehaviour
                     if (CheckIfEnemiesCleared())
                     {
                         Debug.Log("All enemies cleared. Initiating Pause.");
+                        FindObjectOfType<AudioManager>().Play("Gong");
+                        StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoWind());
                         waveState = WaveState.Waiting;
                     }
                 }
@@ -77,8 +95,11 @@ public class WaveScript : MonoBehaviour
         }
     }
 
-    private void StartNextWave()
+    public void StartNextWave()
     {
+        scoreToolTip.SetActive(false);
+        StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoMusic());
+
         //count up wave if wave defined as site adder by "addSiteAt"
         waveNum++;
         if(addSiteAtPointer < addSiteAt.Length)
@@ -108,6 +129,8 @@ public class WaveScript : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("EnemyWave01");
         FindObjectOfType<AudioManager>().Play("EnemyHorn01");
+
+        waveState = WaveState.Waving;
     }
 
     private GameObject[] GetRandomSpawners(int amount)

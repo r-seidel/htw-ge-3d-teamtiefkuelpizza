@@ -10,6 +10,11 @@ public class ArrowCollisionScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "EricHead")
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+            return;
+        }
 
         if (!collision.gameObject.layer.Equals("Enemy"))
         {

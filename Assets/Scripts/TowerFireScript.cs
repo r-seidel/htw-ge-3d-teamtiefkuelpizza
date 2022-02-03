@@ -54,8 +54,11 @@ public class TowerFireScript : MonoBehaviour
                 {
                     if (!TargetStillValid())
                     {
+                        if(target != null)
+                        {
+                            target.GetComponent<EnemyHitScript>().claimed = false;
+                        }
                         timer = searchCoolDown;
-                        target.GetComponent<EnemyHitScript>().claimed = false;
                         orbAnim.SetTrigger("PowerDown");
                         attackState = AttackState.Idle;
                         break;
@@ -67,6 +70,8 @@ public class TowerFireScript : MonoBehaviour
                         timer = 0f;
 
                         orbAnim.SetTrigger("PowerDown");
+                        GetComponent<AudioSource>().Play();
+                        transform.parent.GetComponent<AudioSource>().Play();
                         attackState = AttackState.Shooting;
                     }
                     break;
@@ -78,6 +83,7 @@ public class TowerFireScript : MonoBehaviour
                         timer = searchCoolDown;
                         target.GetComponent<EnemyHitScript>().claimed = false;
                         laser.gameObject.SetActive(false);
+                        StartCoroutine(AudioFadeOut.FadeOut(GetComponent<AudioSource>(), 1f));
                         attackState = AttackState.Idle;
                         break;
                     }
@@ -93,11 +99,17 @@ public class TowerFireScript : MonoBehaviour
                         target.GetComponent<EnemyHitScript>().InitiateDeath();
                         laser.gameObject.SetActive(false);
                         SetNewRandomSearchCoolDown();
+                        StartCoroutine(AudioFadeOut.FadeOut(GetComponent<AudioSource>(), 1f));
                         attackState = AttackState.Idle;
                     }
                     break;
                 }
         }
+    }
+
+    public bool GetIfShooting()
+    {
+        return attackState == AttackState.Shooting;
     }
 
     // find all enemies, cast raycasts to see which this tower can see

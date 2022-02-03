@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -71,6 +72,9 @@ public class RoundScript : MonoBehaviour
         if (!gameOver)
         {
             gameOver = true;
+
+            //FindObjectOfType<AudioManager>().Play("DeathChime");
+            StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoWind());
             foreach (Transform child in EnemyContainer.transform)
             {
                 child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
@@ -80,6 +84,7 @@ public class RoundScript : MonoBehaviour
             GameObject.Find("Score").GetComponent<ScoreScript>().CollectResults();
             GetComponent<WaveScript>().enabled = false;
 
+            RestartToolTip.GetComponent<TextMeshPro>().text = "GAME OVER\n'R' TO RESTART"; 
             RestartToolTip.SetActive(true);
 
             Debug.Log("GAME OVER");
@@ -108,6 +113,11 @@ public class RoundScript : MonoBehaviour
                     Score.GetComponent<ScoreScript>().DecreaseScore();
                 }
 
+            }
+
+            foreach(GameObject spark in GameObject.FindGameObjectsWithTag("SparkEffect"))
+            {
+                spark.GetComponent<ParticleCleanUpScript>().InitDestroy();
             }
 
             foreach(Transform child in Plattform.transform)

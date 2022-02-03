@@ -8,6 +8,7 @@ public class SpawnerScript : MonoBehaviour
     public float interval;
     public int toSpawn;
     public GameObject enemy;
+    public GameObject beacon;
 
     private float timer;
 
@@ -36,6 +37,7 @@ public class SpawnerScript : MonoBehaviour
                     if (Physics.Raycast(ray, out hit, 100f))
                     {
                         GameObject go = Instantiate(enemy, hit.point, new Quaternion(0, 0, 0, 0), GameObject.Find("EnemyContainer").transform);
+                        Instantiate(beacon, hit.point, new Quaternion(0, 0, 0, 0));
                     }
                 }
             }

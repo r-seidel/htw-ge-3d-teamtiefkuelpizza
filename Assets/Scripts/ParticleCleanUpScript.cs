@@ -14,8 +14,7 @@ public class ParticleCleanUpScript : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if ((awaitingDestroy && ps.particleCount == 0) || timer >= 10f)
+        if ((awaitingDestroy && ps.particleCount == 0))
         {
             Destroy(this.gameObject);
         }

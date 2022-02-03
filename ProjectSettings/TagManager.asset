@@ -10,6 +10,7 @@ TagManager:
   - EnemyMain
   - Spawner
   - TowerController
+  - SparkEffect
   layers:
   - Default
   - TransparentFX

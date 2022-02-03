@@ -35,7 +35,7 @@ public class EnemyNavScript : MonoBehaviour
     // https://forum.unity.com/threads/animation-driven-character-using-navigation.378180/
     void OnAnimatorMove()
     {
-        if (navigating)
+        if (navigating && Time.deltaTime != 0)
         {
             // set the navAgent's velocity to the velocity of the playing animation clip
             agent.velocity = animator.deltaPosition / Time.deltaTime;

@@ -17,7 +17,12 @@ public class EnemyDeathScript : MonoBehaviour
 
     public void DestroyEnemy()
     {
-        sparks.GetComponent<ParticleCleanUpScript>().InitDestroy();
+        CleanUpParticle();
         Destroy(transform.parent.gameObject);
+    }
+
+    public void CleanUpParticle()
+    {
+        sparks.GetComponent<ParticleCleanUpScript>().InitDestroy();
     }
 }

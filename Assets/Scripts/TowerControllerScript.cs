@@ -41,16 +41,19 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
 
     public void Interact()
     {
-        if (bought)
+        GameObject rm = GameObject.Find("RoundManager");
+        if (rm.GetComponent<WaveScript>().GetIfPaused())
         {
-            //TryUpgradeTower();
-            InfiniteUpgrade();
-        }
-        else
-        {
-            PlaceTower();
-            //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play()
-            FindObjectOfType<AudioManager>().Play("TowerAvailable");
+            if (bought)
+            {
+                //TryUpgradeTower();
+                InfiniteUpgrade();
+            }
+            else
+            {
+                PlaceTower();
+            }
+            rm.GetComponent<WaveScript>().StartNextWave();
         }
     }
 
