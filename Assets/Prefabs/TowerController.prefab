@@ -114,7 +114,7 @@ MonoBehaviour:
   minSearchTimeMultiplier: 0.65
   maxSearchTimeMultiplier: 0.65
   killTimeMultiplier: 0.65
-  maxLevel: 10
+  maxLevel: -1
   towerPrefab: {fileID: 3410791933165335374, guid: 8b510612fa2119646b7b98d7ff295659, type: 3}
 --- !u!114 &8088125001750429692
 MonoBehaviour:
