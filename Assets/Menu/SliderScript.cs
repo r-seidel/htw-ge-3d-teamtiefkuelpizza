@@ -6,33 +6,34 @@ using UnityEngine.UI;
 
 public class SliderScript : MonoBehaviour
 {
+    public Slider MasterSlider;
     public Slider MusicSlider;
-    public Slider SFXSlider;
     public Slider FOVSlider;
-    public Slider SensivitySlider;
+    public Slider SensitivitySlider;
 
-   
+    public GameObject Camera;
+    public GameObject MusicManager;
 
     private void Start()
     {
-        MusicSlider.onValueChanged.AddListener((mvalue) =>
+        MasterSlider.onValueChanged.AddListener((mvalue) =>
         {
             
         });
 
-        SFXSlider.onValueChanged.AddListener((svalue) =>
+        MusicSlider.onValueChanged.AddListener((svalue) =>
         {
-            
+            MusicManager.GetComponent<AudioSource>().volume = svalue;
         });
 
         FOVSlider.onValueChanged.AddListener((fvalue) =>
         {
-            
+            Camera.GetComponent<Camera>().fieldOfView = fvalue;
         });
 
-        SensivitySlider.onValueChanged.AddListener((value) =>
+        SensitivitySlider.onValueChanged.AddListener((value) =>
         {
-            
+            PlayerCameraScript.sensitivity = value * 2 * 8f;
         });
     }
 }

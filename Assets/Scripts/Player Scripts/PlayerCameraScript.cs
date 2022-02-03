@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraScript : MonoBehaviour
 {
-    public float sensitivity = 100f;
+    public static float sensitivity = 8f;
     public Transform playerBody;
 
     private float xRotation = 0f;
@@ -48,4 +48,5 @@ public class PlayerCameraScript : MonoBehaviour
     {
         mouseY = context.ReadValue<float>() * sensitivity * Time.deltaTime;
     }
+    
 }
