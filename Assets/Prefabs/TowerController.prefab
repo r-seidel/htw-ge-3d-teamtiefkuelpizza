@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d02ff4f46f7ee547ad3e6731fe336e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSearchTimeMultiplier: 0.8
-  maxSearchTimeMultiplier: 0.8
-  killTimeMultiplier: 0.8
+  minSearchTimeMultiplier: 0.65
+  maxSearchTimeMultiplier: 0.65
+  killTimeMultiplier: 0.65
   maxLevel: 10
   towerPrefab: {fileID: 3410791933165335374, guid: 8b510612fa2119646b7b98d7ff295659, type: 3}
 --- !u!114 &8088125001750429692

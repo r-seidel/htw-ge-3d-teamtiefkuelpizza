@@ -45,4 +45,9 @@ public class TowerToolTipScript : MonoBehaviour, WatchedInterface
         watched = true;
         timer = 0f;
     }
+
+    public void HideToolTip()
+    {
+        tooltip.SetActive(false);
+    }
 }

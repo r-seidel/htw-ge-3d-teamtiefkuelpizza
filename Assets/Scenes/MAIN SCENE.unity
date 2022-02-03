@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.471622, g: 0.6948837, b: 0.69781446, a: 1}
+  m_IndirectSpecularColor: {r: 2.3729606, g: 0.68103087, b: 0.66480166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -569,7 +569,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &240245520
 PrefabInstance:
@@ -1294,7 +1294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2011613326075688372, guid: ec71698063df62448b3aadeb47e1e145, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2011613326075688372, guid: ec71698063df62448b3aadeb47e1e145, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2504,7 +2504,7 @@ MonoBehaviour:
     invertFade: 0
     distanceFadeStart: 1500
     distanceFadeEnd: 1500
-    textureOffset: {x: -0, y: -0, z: -0}
+    textureOffset: {x: 0, y: 0, z: 0}
     falloffMode: 0
   m_Version: 2
 --- !u!1 &616760173
@@ -2654,7 +2654,7 @@ RectTransform:
   - {fileID: 176150530}
   - {fileID: 178378329}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3012,9 +3012,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreToolTip: {fileID: 1917714326}
-  enemyBaseline: 13
+  enemyBaseline: 10
   exponent: 2
-  addSiteAt: 030000000500000007000000
+  addSiteAt: 040000000700000009000000
   waveLength: 20
   pauseLenght: 5
   checkCooldown: 3
@@ -3190,6 +3190,11 @@ MonoBehaviour:
   - name: Gong
     clip: {fileID: 8300000, guid: a69ea5fcbc340734db0745d9376da0fd, type: 3}
     volume: 0.223
+    pitch: 1
+    source: {fileID: 0}
+  - name: TowerBuy
+    clip: {fileID: 8300000, guid: 9e99e5404acca044eb5794272fb6a55c, type: 3}
+    volume: 0.276
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &747786367
@@ -3406,7 +3411,7 @@ Transform:
   - {fileID: 1315024321}
   - {fileID: 1781745371}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &900461713
 PrefabInstance:
@@ -4908,7 +4913,7 @@ RectTransform:
   - {fileID: 1267910148}
   - {fileID: 1788960823}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8544,7 +8549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_LocalScale.x
@@ -8560,15 +8565,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 366.6841
+      value: 369.24
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.01001
+      value: 6.83
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.68
+      value: 71.12
       objectReference: {fileID: 0}
     - target: {fileID: 3671394866813012166, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8598,6 +8603,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3671394866813012167, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+      propertyPath: maxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671394866813012167, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+      propertyPath: cameraObject
+      value: 
+      objectReference: {fileID: 1246438541}
     - target: {fileID: 3671394866813012167, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: layerMask.m_Bits
       value: 15223
@@ -10023,7 +10036,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 35f9046820daa4a459d4019a76e99420, type: 2}
     - target: {fileID: -8679921383154817045, guid: 8b76ec6143961ff40b1baf680572d88c, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b76ec6143961ff40b1baf680572d88c, type: 3}
       propertyPath: m_LocalScale.x

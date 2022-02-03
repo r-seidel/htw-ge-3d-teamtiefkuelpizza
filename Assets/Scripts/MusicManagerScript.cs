@@ -10,59 +10,36 @@ public class MusicManagerScript : MonoBehaviour
     private bool playingMusic;
     private AudioSource audioSource;
     private SoundFiles lastTrack;
+    private IEnumerator activeRoutine;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public IEnumerator IntoWind()
+    public void IntoWind()
     {
         if (playingMusic)
         {
-            Debug.Log("Into Wind");
-            playingMusic = false;
-            float startVolume = audioSource.volume;
-
-            while (audioSource.volume > 0)
+            if (activeRoutine != null)
             {
-                audioSource.volume -= startVolume * Time.deltaTime / 3f;
-
-                yield return null;
+                StopCoroutine(activeRoutine);
             }
-
-            audioSource.loop = true;
-            audioSource.clip = wind.clip;
-            audioSource.Play();
-
-            while (audioSource.volume < wind.volume)
-            {
-                audioSource.volume += Time.deltaTime / 1f;
-
-                yield return null;
-            }
+            activeRoutine = FadeToWind();
+            StartCoroutine(activeRoutine);
         }
     }
 
-    public IEnumerator IntoMusic()
+    public void IntoMusic()
     {
         if (!playingMusic)
         {
-            Debug.Log("Into Music");
-            float startVolume = audioSource.volume;
-
-            while (audioSource.volume > 0)
+            if(activeRoutine != null)
             {
-                audioSource.volume -= startVolume * Time.deltaTime / 1f;
-
-                yield return null;
+                StopCoroutine(activeRoutine);
             }
-
-            audioSource.Stop();
-            audioSource.loop = false;
-            playingMusic = true;
-
-            PlayRandomTrack();
+            activeRoutine = FadeToMusic();
+            StartCoroutine(activeRoutine);
         }
     }
 
@@ -94,5 +71,52 @@ public class MusicManagerScript : MonoBehaviour
     {
         int random = Random.Range(0, music.Length);
         return music[random];
+    }
+
+    private IEnumerator FadeToMusic()
+    {
+        //Debug.Log("[Music] Transition to Music");
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 1f;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.loop = false;
+        playingMusic = true;
+        PlayRandomTrack();
+
+        activeRoutine = null;
+    }
+
+    private IEnumerator FadeToWind()
+    {
+        //Debug.Log("[Music] Transition to Wind");
+        playingMusic = false;
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 3f;
+
+            yield return null;
+        }
+
+        audioSource.loop = true;
+        audioSource.clip = wind.clip;
+        audioSource.Play();
+
+        while (audioSource.volume < wind.volume)
+        {
+            audioSource.volume += Time.deltaTime / 1f;
+
+            yield return null;
+        }
+
+        activeRoutine = null;
     }
 }

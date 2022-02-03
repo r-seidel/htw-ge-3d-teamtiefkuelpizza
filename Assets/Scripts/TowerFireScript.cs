@@ -9,7 +9,7 @@ public class TowerFireScript : MonoBehaviour
     public float maxSearchCoolDown;
     public float killTime;          // time the laser will shoot a target until it dies
     public float maxRange;          // laser wont shoot if the target is outside of range
-    public LayerMask layerMask;     // set layers laser can shoot through
+    public LayerMask layerMask;     // set layers laser can not shoot through
 
     private LineRenderer laser;
     private Animator orbAnim;

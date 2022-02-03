@@ -255,7 +255,7 @@ MonoBehaviour:
   maxRange: 1000
   layerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 8055
 --- !u!82 &9048993176930702527
 AudioSource:
   m_ObjectHideFlags: 0

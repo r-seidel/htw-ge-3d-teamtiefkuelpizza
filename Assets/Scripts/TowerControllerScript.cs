@@ -53,6 +53,8 @@ public class TowerControllerScript : MonoBehaviour, InteractableInterface
             {
                 PlaceTower();
             }
+            GetComponentInChildren<TowerToolTipScript>().HideToolTip();
+            FindObjectOfType<AudioManager>().Play("TowerBuy");
             rm.GetComponent<WaveScript>().StartNextWave();
         }
     }

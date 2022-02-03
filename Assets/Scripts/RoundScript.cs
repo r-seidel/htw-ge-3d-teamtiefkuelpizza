@@ -74,7 +74,7 @@ public class RoundScript : MonoBehaviour
             gameOver = true;
 
             //FindObjectOfType<AudioManager>().Play("DeathChime");
-            StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoWind());
+            FindObjectOfType<MusicManagerScript>().IntoWind();
             foreach (Transform child in EnemyContainer.transform)
             {
                 child.gameObject.GetComponentInChildren<EnemyHitScript>().InitiateDeath();
@@ -96,7 +96,7 @@ public class RoundScript : MonoBehaviour
     public void ReStart(InputAction.CallbackContext context)
     {
 
-        if (context.performed)
+        if (context.performed && gameOver)
         {
             GetComponent<WaveScript>().resetValues();
             foreach (Transform child in EnemyContainer.transform)

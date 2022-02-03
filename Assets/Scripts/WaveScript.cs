@@ -86,7 +86,7 @@ public class WaveScript : MonoBehaviour
                     {
                         Debug.Log("All enemies cleared. Initiating Pause.");
                         FindObjectOfType<AudioManager>().Play("Gong");
-                        StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoWind());
+                        FindObjectOfType<MusicManagerScript>().IntoWind();
                         waveState = WaveState.Waiting;
                     }
                 }
@@ -98,7 +98,7 @@ public class WaveScript : MonoBehaviour
     public void StartNextWave()
     {
         scoreToolTip.SetActive(false);
-        StartCoroutine(FindObjectOfType<MusicManagerScript>().IntoMusic());
+        FindObjectOfType<MusicManagerScript>().IntoMusic();
 
         //count up wave if wave defined as site adder by "addSiteAt"
         waveNum++;
