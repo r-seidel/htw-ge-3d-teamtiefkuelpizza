@@ -125,7 +125,7 @@ MonoBehaviour:
     m_Value: {fileID: 8900000, guid: 02af117f674002347966509ee6469369, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 308.4
   spaceRotation:
     m_OverrideState: 1
     m_Value: {x: 0, y: 0, z: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
     m_Value: 0
   earthCurvature:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 0.857
   cloudTiling:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1}
@@ -181,10 +181,10 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0}
   lowestCloudAltitude:
     m_OverrideState: 1
-    m_Value: 197
+    m_Value: 500
   cloudThickness:
     m_OverrideState: 1
-    m_Value: 4668.49
+    m_Value: 10000
   fadeInMode:
     m_OverrideState: 0
     m_Value: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     m_Value: 0
   cloudPreset:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -369,8 +369,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   scatteringTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.9872745, g: 0.6179246, b: 1, a: 1}
   powderEffectIntensity:
     m_OverrideState: 0
     m_Value: 0.25
@@ -399,27 +399,27 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   ambientLightProbeDimmer:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   sunLightDimmer:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   erosionOcclusion:
     m_OverrideState: 0
     m_Value: 0.1
   globalWindSpeed:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      mode: 1
+      mode: 2
       customValue: 100
-      additiveValue: 0
+      additiveValue: 150
       multiplyValue: 1
   orientation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      mode: 1
+      mode: 2
       customValue: 0
-      additiveValue: 0
+      additiveValue: 414
       multiplyValue: 1
   altitudeDistortion:
     m_OverrideState: 0
