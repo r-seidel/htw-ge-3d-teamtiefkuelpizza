@@ -98,7 +98,7 @@ MonoBehaviour:
     m_Value: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   aerosolMaximumAltitude:
     m_OverrideState: 1
-    m_Value: 8289.296
+    m_Value: 8442.1
   aerosolAnisotropy:
     m_OverrideState: 1
     m_Value: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
     m_Value: {fileID: 8900000, guid: 02af117f674002347966509ee6469369, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 500
   spaceRotation:
     m_OverrideState: 1
     m_Value: {x: 0, y: 0, z: 0}
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   colorMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   color:
     m_OverrideState: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 0
-    m_Value: 5000
+    m_Value: 1488
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -554,20 +554,20 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   maximumHeight:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 15
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 85
+    m_Value: 17.8
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.731
   depthExtent:
     m_OverrideState: 0
     m_Value: 64
