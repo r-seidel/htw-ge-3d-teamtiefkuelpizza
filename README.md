@@ -18,8 +18,8 @@ dem Spiel auch eine andere Atmosphäre gegeben wird.
 
 
 <h3>Tower & Upgrade</h3>
-Der Tower dient dem Spieler als Support und hilft dem Spieler dabei, die Gegner zu eliminieren. Insgesamt gibt es auf der Position des Spielers sechs Tower, die der Spieler
-nach einer beendeten Runde bauen kann oder einen bereits erbauten Tower erweitern. Somit wird der Tower als Unterstützung für den Spieler ein essentielles Hilfsmittel im Spiel.
+Der Tower dient dem Spieler als Support und hilft dem Spieler dabei, die Gegner zu erlösen. Insgesamt gibt es auf der Position des Spielers vier Tower, die der Spieler
+nach einer beendeten Runde bauen kann oder einen bereits erbauten Tower erweitern kann. Somit wird der Tower als Unterstützung für den Spieler ein essentielles Hilfsmittel im Spiel.
 Durch einen Hinweis über dem Scoreboard weiß der Spieler wann er seine Tower verbessern kann. 
 
 
