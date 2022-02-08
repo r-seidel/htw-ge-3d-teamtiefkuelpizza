@@ -1,9 +1,9 @@
 
-<h1>Vibe Fall</h1>
+<h1>VibeFall</h1>
 by Team Tiefkühlpizza
 
-<h2>Was ist "Vibe Fall"?</h2>
-Vibe Fall zieht Inspiration aus Tower Defense und First Person Shootern. Im Spiel verhindern wir, dass sich die sogenannten "Dreamer" in den Tod stürzen. Dafür werfen wir sie mit einem magischen Feuerball ab, der dafür sorgt, dass die Energie aus ihnen herausströmt. Die Inspiration des Spiels kam von den Lemmingen, welche sich, laut Mythos, bei Überbevölkerung in den nächstgelegenen Abgrund stürzen um so ihre Population unter Kontrolle zu bringen.
+<h2>Was ist "VibeFall"?</h2>
+VibeFall zieht Inspiration aus Tower Defense und First Person Shootern. Im Spiel verhindern wir, dass sich die sogenannten "Dreamer" in den Tod stürzen. Dafür werfen wir sie mit einem magischen Feuerball ab, der dafür sorgt, dass die Energie aus ihnen herausströmt. Die Inspiration des Spiels kam von den Lemmingen, welche sich, laut Mythos, bei Überbevölkerung in den nächstgelegenen Abgrund stürzen um so ihre Population unter Kontrolle zu bringen.
 
 
 <h2>Gameplay</h2>
