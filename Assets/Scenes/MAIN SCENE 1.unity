@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 189.37073, g: 85.34839, b: 192.25415, a: 1}
+  m_IndirectSpecularColor: {r: 187.2262, g: 83.89813, b: 187.18799, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4884,6 +4884,7 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     source: {fileID: 0}
+  musicSetting: 0.75
 --- !u!82 &1242922553
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5096,7 +5097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MasterSlider: {fileID: 1381597277}
-  MusicSlider: {fileID: 1381597277}
+  MusicSlider: {fileID: 1160755383}
   FOVSlider: {fileID: 1510223143}
   SensitivitySlider: {fileID: 330944698}
   Camera: {fileID: 1246438541}
@@ -7215,23 +7216,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606255845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1627058516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 496666649888692023, guid: 5a319f37396ee77439d68c8ce29b9b49, type: 3}
-  m_PrefabInstance: {fileID: 1525129423}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1627058518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627058516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071f1939121b6244ca84561b8854a837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1637633672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8088125002768482350, guid: 8aa342fd1f283ee4a82d0ae5caef03fa, type: 3}

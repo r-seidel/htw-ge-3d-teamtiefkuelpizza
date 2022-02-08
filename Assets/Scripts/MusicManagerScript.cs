@@ -77,7 +77,7 @@ public class MusicManagerScript : MonoBehaviour
     private IEnumerator FadeToMusic()
     {
         //Debug.Log("[Music] Transition to Music");
-        float startVolume = audioSource.volume * musicSetting;
+        float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
         {
@@ -98,7 +98,7 @@ public class MusicManagerScript : MonoBehaviour
     {
         //Debug.Log("[Music] Transition to Wind");
         playingMusic = false;
-        float startVolume = audioSource.volume  * musicSetting;
+        float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
         {
@@ -111,7 +111,7 @@ public class MusicManagerScript : MonoBehaviour
         audioSource.clip = wind.clip;
         audioSource.Play();
 
-        while (audioSource.volume < wind.volume)
+        while (audioSource.volume < wind.volume * musicSetting)
         {
             audioSource.volume += Time.deltaTime / 1f;
 
