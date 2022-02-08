@@ -28,7 +28,7 @@ public class HandAnimScript : MonoBehaviour
 
     public void triggerShooting(InputAction.CallbackContext callback)
     {
-        if (callback.performed && fireBall.activeSelf)
+        if (callback.performed && fireBall.activeSelf && !GameObject.Find("Menu").activeSelf)
         {
             animator.SetTrigger("Shooting");
         }
@@ -36,7 +36,7 @@ public class HandAnimScript : MonoBehaviour
 
     public void triggerFU(InputAction.CallbackContext callback)
     {
-        if (callback.performed && !fireBall.activeSelf)
+        if (callback.performed && !fireBall.activeSelf && !GameObject.Find("Menu").activeSelf)
         {
             transform.GetComponent<WeaponScript>().resetTimer();
             animator.SetTrigger("Fuuing"); 
