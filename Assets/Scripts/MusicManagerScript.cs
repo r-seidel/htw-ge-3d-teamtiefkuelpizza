@@ -11,6 +11,7 @@ public class MusicManagerScript : MonoBehaviour
     private AudioSource audioSource;
     private SoundFiles lastTrack;
     private IEnumerator activeRoutine;
+    public float musicSetting = 0.75f;
 
     private void Start()
     {
@@ -49,7 +50,7 @@ public class MusicManagerScript : MonoBehaviour
         {
             SoundFiles next = GetRandomTrack();
             audioSource.clip = next.clip;
-            audioSource.volume = next.volume;
+            audioSource.volume = next.volume * musicSetting;
             audioSource.Play();
             lastTrack = next;
         }
@@ -62,7 +63,7 @@ public class MusicManagerScript : MonoBehaviour
             }
             lastTrack = next;
             audioSource.clip = next.clip;
-            audioSource.volume = next.volume;
+            audioSource.volume = next.volume * musicSetting;
             audioSource.Play();
         }
     }
@@ -76,7 +77,7 @@ public class MusicManagerScript : MonoBehaviour
     private IEnumerator FadeToMusic()
     {
         //Debug.Log("[Music] Transition to Music");
-        float startVolume = audioSource.volume;
+        float startVolume = audioSource.volume * musicSetting;
 
         while (audioSource.volume > 0)
         {
@@ -97,7 +98,7 @@ public class MusicManagerScript : MonoBehaviour
     {
         //Debug.Log("[Music] Transition to Wind");
         playingMusic = false;
-        float startVolume = audioSource.volume;
+        float startVolume = audioSource.volume  * musicSetting;
 
         while (audioSource.volume > 0)
         {
