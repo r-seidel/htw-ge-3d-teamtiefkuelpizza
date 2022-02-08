@@ -24,6 +24,7 @@ public class SliderScript : MonoBehaviour
         MusicSlider.onValueChanged.AddListener((svalue) =>
         {
             MusicManager.GetComponent<AudioSource>().volume = svalue * 0.1f;
+            MusicManager.GetComponent<MusicManagerScript>().musicSetting = svalue;
         });
 
         FOVSlider.onValueChanged.AddListener((fvalue) =>
