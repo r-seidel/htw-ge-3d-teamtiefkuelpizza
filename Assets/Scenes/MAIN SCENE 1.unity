@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 179.82007, g: 79.73889, b: 173.03857, a: 1}
+  m_IndirectSpecularColor: {r: 189.37073, g: 85.34839, b: 192.25415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3083,7 +3083,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: DeathChime
-    clip: {fileID: 8300000, guid: 5d2f89b3e4fb0824496c18609210754e, type: 3}
+    clip: {fileID: 8300000, guid: 5dd3d857bbbb1934e9cb5d719411fa6d, type: 3}
     volume: 0.208
     pitch: 1
     source: {fileID: 0}
@@ -8572,6 +8572,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3671394866813012189, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671394866813012189, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
+      propertyPath: runSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3733079528163046371, guid: d6fca1b3a6d635e4dbdec9da715f9722, type: 3}
       propertyPath: moveWithTransform
       value: 0
@@ -9385,7 +9393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 34.882, y: 0, z: 0}
 --- !u!114 &1892565514
 MonoBehaviour:

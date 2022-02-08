@@ -67,13 +67,20 @@ public class RoundScript : MonoBehaviour
         }
     }
 
+    public void FillLifes()
+    {
+        lifes = maxLifes;
+        UpdateHand();
+        UpdateDayTime();
+    }
+
     public void EndRound()
     {
         if (!gameOver)
         {
             gameOver = true;
 
-            //FindObjectOfType<AudioManager>().Play("DeathChime");
+            FindObjectOfType<AudioManager>().Play("DeathChime");
             FindObjectOfType<MusicManagerScript>().IntoWind();
             foreach (Transform child in EnemyContainer.transform)
             {

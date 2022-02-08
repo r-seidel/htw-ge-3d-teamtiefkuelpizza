@@ -87,6 +87,7 @@ public class WaveScript : MonoBehaviour
                         Debug.Log("All enemies cleared. Initiating Pause.");
                         FindObjectOfType<AudioManager>().Play("Gong");
                         FindObjectOfType<MusicManagerScript>().IntoWind();
+                        GetComponent<RoundScript>().FillLifes();
                         waveState = WaveState.Waiting;
                     }
                 }

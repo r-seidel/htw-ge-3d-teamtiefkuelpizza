@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 4679563216426010897}
   - component: {fileID: 6667997639875622467}
   - component: {fileID: 4768434801775926774}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: HeadColliderBox
   m_TagString: EricHead
   m_Icon: {fileID: 0}

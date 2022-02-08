@@ -79,6 +79,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void SetCrouchTrigger(InputAction.CallbackContext context)
     {
+        /*
         if (context.performed)
         {
             crouch = true;
@@ -87,6 +88,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             crouch = false;
         }
+        */
     }
 
     public void SetRunTrigger(InputAction.CallbackContext context)
