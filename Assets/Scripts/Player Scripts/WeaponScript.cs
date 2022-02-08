@@ -13,6 +13,7 @@ public class WeaponScript : MonoBehaviour
     public float shootInterval;
 
     private GameObject pullSpark;
+    public GameObject Menu;
 
     public void Start()
     {
@@ -36,7 +37,7 @@ public class WeaponScript : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        if (context.performed && timer > shootInterval)
+        if (context.performed && timer > shootInterval && !Menu.activeSelf)
         {
             GameObject go = Instantiate(arrow);
             go.transform.position = fireBall.transform.position;
