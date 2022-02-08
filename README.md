@@ -16,24 +16,24 @@ Das Spiel bei Tag: <br>
 <img width="400" alt="Bildschirmfoto 2022-02-06 um 15 59 28" src="https://user-images.githubusercontent.com/59690962/152816828-d4441ca7-1030-4cb9-9ff5-f22ad08e904f.png">
 
 Das Spiel bei Nacht: <br>
-<img width="400" alt="Bildschirmfoto 2022-02-06 um 16 00 48" src="https://user-images.githubusercontent.com/59690962/152816841-6ddd9c6e-c590-45e7-a4ee-28c898c655f4.png">
+<img width="400" alt="Bildschirmfoto 2022-02-06 um 16 00 48" src="https://user-images.githubusercontent.com/59690962/153019757-04f8917d-52bd-4c39-baa7-417556655ad7.png">
 
 
 <h3>Turm & Upgrade</h3>
  Der Turm dient dem Spieler als Unterstützung und hilft dem Spieler dabei, die Gegner zu erlösen. Insgesamt hat der Spieler vier Podeste, auf denen er
  nach einer beendeten Welle einen Turm bauen oder einen bereits erbauten Turm aufwerten kann. Somit wird der Turm als Unterstützung für den Spieler ein essentielles Hilfsmittel im Spiel. Die nächste Welle startet erst, wenn der Spieler einen Turm gebaut oder aufgewertet hat.
-<img width="400" alt="Bildschirmfoto 2022-02-06 um 16 00 29" src="https://user-images.githubusercontent.com/59690962/152816442-819fa5f1-2cc3-439a-80ca-84d079dece88.png">
-<img width="400" alt="Bildschirmfoto 2022-02-06 um 16 10 29" src="https://user-images.githubusercontent.com/59690962/152816492-66b5ac49-c88f-43ae-81c4-485042ea9de1.png">
+<img width="400" alt ="tower" src ="https://user-images.githubusercontent.com/59690962/153017044-04c2c155-0382-4450-ac73-8cde22e14248.png">
+<img width="400" alt="Bildschirmfoto 2022-02-06 um 16 10 29" src="https://user-images.githubusercontent.com/59690962/153017685-72b58932-3199-497e-bc09-8a78623807b9.png">
 
 
 <h3>Scoreboard & Game Over</h3>
 Das Scoreboard wird dem Spieler während des ganzes Spiels angezeigt und erhöht sich für jeden erlösten "Dreamer". Das Spiel endet, wenn in einer Welle drei Dreamer in den Abgrund stürzen.
-<img width="400" alt="Bildschirmfoto 2022-02-06 um 15 58 55" src="https://user-images.githubusercontent.com/59690962/152815886-df589558-0b41-44b3-a9c7-e09c5975a8b0.png"><img width="400" alt="Bildschirmfoto 2022-02-06 um 15 59 50" src="https://user-images.githubusercontent.com/59690962/152816133-d3758692-077c-41c3-bf89-062da7a56e75.png">
+<img width="400" alt="Bildschirmfoto 2022-02-06 um 15 58 55" src="https://user-images.githubusercontent.com/59690962/153017919-1cac101d-9a36-4189-a0a1-b7cffe2948be.png"><img width="400" alt="Bildschirmfoto 2022-02-06 um 15 59 50" src="https://user-images.githubusercontent.com/59690962/153019521-c40463d9-a1b3-44ec-bbea-4792758077ab.png">
 
 
 <h3>Weitere Features</h3>
 Ein Menü mit Einstellungs-Slidern. Es lässt sich die Gesamtlautstärke, Musiklautstärke, das Field of View (FOV) und die Empfindlichkeit der Maus einstellen.
-<img width="400" alt="Bildschirmfoto 2022-02-06 um 15 43 24" src="https://user-images.githubusercontent.com/59690962/152815544-2743ea53-4f5f-47b5-8a78-9d8520931a7d.png">
+<img width="400" alt="Bildschirmfoto 2022-02-06 um 15 43 24" src="https://user-images.githubusercontent.com/59690962/153019382-5a088845-d5d8-46d3-8a30-0fd0e308181a.png">
 
 
 
@@ -112,6 +112,9 @@ Linke Maustaste - Schießen <br>
  https://pixabay.com/de/music/intro-outro-clip-07-the-beginning-797/
  <h3>Sonstiges</h3>
  Adam Font: https://www.dafont.com/de/adam.font
+
+
+
 
 
 
